@@ -1,6 +1,7 @@
 # Table to Excel 2
 
-[![Build Status](https://travis-ci.org/linways/table-to-excel.svg?branch=master)](https://travis-ci.org/linways/table-to-excel)
+[//]: # ()
+[//]: # ([![Build Status]&#40;https://travis-ci.org/linways/table-to-excel.svg?branch=master&#41;]&#40;https://travis-ci.org/linways/table-to-excel&#41;)
 
 Export HTML table to valid excel file effortlessly.
 This library uses [exceljs/exceljs](https://github.com/exceljs/exceljs) under the hood to create the excel.  
