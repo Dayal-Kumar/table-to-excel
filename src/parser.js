@@ -5,10 +5,11 @@ const TTEParser = (function() {
 
   /**
    * Parse HTML table to excel worksheet
+   * @param {object} wb The workbook object
    * @param {object} ws The worksheet object
    * @param {HTML entity} table The table to be converted to excel sheet
    */
-  methods.parseDomToTable = async function(wb, ws, table, opts) {
+  methods.parseDomToTable = function(wb, ws, table, opts) {
     let _r, _c, cs, rs, r, c;
     let rows = [...table.rows];
     let widths = table.getAttribute("data-cols-width");
@@ -60,7 +61,7 @@ const TTEParser = (function() {
         let imgs = td.getElementsByTagName("img");
         if(imgs.length > 0) {
           for(var i=0; i<imgs.length; ++i) {
-            if(typeof imgs[i].src == "string" && imgs[i].src.trim() != "") {
+            if(typeof imgs[i].src == "string" && imgs[i].src.trim() !== "") {
               let fp_arr = imgs[i].src.trim().split('/');
               if(fp_arr.length > 0) {
                 if(getPathFromUrl(imgs[i].src.trim()).toLowerCase().endsWith('jpg')) {
@@ -111,6 +112,9 @@ const TTEParser = (function() {
   };
 
   let getDataUrl = function(img, type="image/jpeg") {
+    // suppress cross-origin errors
+    img.crossOrigin = "Anonymous";
+
     // Create canvas
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');

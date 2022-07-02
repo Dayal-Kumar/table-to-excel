@@ -10,14 +10,19 @@ export const defaultOpts = {
   }
 };
 
+export function getWorkBook() {
+  return TTE.initWorkBook();
+}
+
+
 /**
  * Returns an empty worksheet for testing.
+ * @param {object} wb The workbook object
  * @param {object} opts
  */
-export function getWorkSheet(opts = {}) {
+export function getWorkSheet(wb, opts = {}) {
   let _opts = defaultOpts;
   opts = { ..._opts, ...opts };
-  let wb = TTE.initWorkBook();
   return TTE.initSheet(wb, opts.sheet.name);
 }
 /**
