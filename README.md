@@ -19,11 +19,11 @@ Just add a script tag:
 ## Node
 
 ```bash
-npm install @linways/table-to-excel --save
+npm install @dayalk/table-to-excel --save
 ```
 
 ```javascript
-import TableToExcel from "@linways/table-to-excel";
+import TableToExcel from "@dayalk/table-to-excel";
 ```
 
 # Usage
@@ -161,6 +161,10 @@ Example:
 ```
 
 # Release Changelog
+
+## 1.0.9 
+
+Fixed image CORS error
 
 ## 1.0.0
 
