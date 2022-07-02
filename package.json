@@ -1,6 +1,6 @@
 {
   "name": "@dayalk/table-to-excel",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Javascript library to create 'valid' excel file from html table with styles",
   "main": "./dist/tableToExcel.js",
   "repository": {
